@@ -1,0 +1,511 @@
+/* Variables globales */
+:root {
+  --primary-color: #4acaa8;
+  --secondary-color: #4a4a4a;
+  --accent-color: #4acaa8;
+  --background-color: #ffffff;
+  --text-color: #4a4a4a;
+  --border-color: #e5e5e5;
+  --hover-color: #3ab89a;
+  --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --transition-speed: 0.3s;
+  --header-bg: #2d3436;
+  --header-text: #ffffff;
+  --section-padding: 3em 0;
+  --container-width: 1200px;
+}
+
+/* Estilos base */
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+#header {
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  padding: 2em 0;
+  text-align: center;
+}
+
+#header .image.avatar {
+  width: 8em;
+  height: 8em;
+  border-radius: 50%;
+  margin: 0 auto 1em;
+  overflow: hidden;
+}
+
+#header .image.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#header h1 {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+#header p {
+  margin: 0.5em 0 0;
+  opacity: 0.8;
+}
+
+/* Navegación */
+#nav {
+  margin: 1em 0;
+}
+
+#nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#nav ul li {
+  margin: 0.5em 0;
+}
+
+#nav ul li a {
+  color: var(--header-text);
+  text-decoration: none;
+  padding: 0.5em 1em;
+  display: block;
+  transition: background-color var(--transition-speed);
+}
+
+#nav ul li a:hover,
+#nav ul li a.active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Secciones */
+section {
+  padding: var(--section-padding);
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+/* Tarjetas y artículos */
+.v-card {
+  background-color: var(--background-color);
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  transition: transform var(--transition-speed);
+  margin-bottom: 2em;
+}
+
+.v-card:hover {
+  transform: translateY(-5px);
+}
+
+.v-card .image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.v-card .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.v-card .inner {
+  padding: 1.5em;
+}
+
+/* Botones */
+.v-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.8em 1.5em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+  text-transform: none;
+  font-weight: 600;
+}
+
+.v-btn:hover {
+  background-color: var(--hover-color);
+}
+
+.v-btn--outlined {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.v-btn--outlined:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Iconos */
+.v-icon {
+  color: var(--primary-color);
+  margin-right: 0.5em;
+}
+
+/* Formularios */
+.v-text-field {
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.v-text-field input,
+.v-text-field textarea {
+  width: 100%;
+  padding: 0.8em;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  transition: border-color var(--transition-speed);
+}
+
+.v-text-field input:focus,
+.v-text-field textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+/* Footer */
+.v-footer {
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  padding: 2em 0;
+  text-align: center;
+}
+
+.v-footer .icons {
+  list-style: none;
+  padding: 0;
+  margin: 1em 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+.v-footer .icons a {
+  color: var(--header-text);
+  text-decoration: none;
+  transition: opacity var(--transition-speed);
+}
+
+.v-footer .icons a:hover {
+  opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 2em 0;
+  }
+
+  .container {
+    padding: 0 1.5em;
+  }
+
+  #header .image.avatar {
+    width: 6em;
+    height: 6em;
+  }
+
+  .v-card .image {
+    height: 150px;
+  }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Utilidades */
+.text-center {
+  text-align: center;
+}
+
+.mt-1 { margin-top: 0.5em; }
+.mt-2 { margin-top: 1em; }
+.mt-3 { margin-top: 1.5em; }
+.mt-4 { margin-top: 2em; }
+
+.mb-1 { margin-bottom: 0.5em; }
+.mb-2 { margin-bottom: 1em; }
+.mb-3 { margin-bottom: 1.5em; }
+.mb-4 { margin-bottom: 2em; }
+
+/* Estilos generales */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+/* Encabezados */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+/* Listas */
+.v-list {
+  background: transparent;
+}
+
+.v-list-item {
+  min-height: 48px;
+  transition: background-color var(--transition-speed);
+}
+
+.v-list-item:hover {
+  background-color: rgba(74, 202, 168, 0.1);
+}
+
+.v-list-item-title {
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+/* Chips */
+.v-chip {
+  font-weight: 500;
+  transition: all var(--transition-speed);
+}
+
+.v-chip:hover {
+  transform: translateY(-2px);
+}
+
+/* Carrusel */
+.v-carousel {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+}
+
+/* Enlaces */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+a:hover {
+  color: var(--hover-color);
+  text-decoration: underline;
+}
+
+/* Contenedores */
+.v-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .v-container {
+    padding: 16px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Estilos para imágenes */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Estilos para inputs */
+.v-text-field {
+  border-radius: 8px;
+}
+
+.v-text-field .v-field {
+  border: 1px solid var(--border-color);
+  transition: border-color var(--transition-speed);
+}
+
+.v-text-field .v-field:hover {
+  border-color: var(--primary-color);
+}
+
+/* Estilos para diálogos */
+.v-dialog {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Estilos para tooltips */
+.v-tooltip {
+  background-color: var(--primary-color) !important;
+  border-radius: 4px;
+}
+
+/* Estilos para menús */
+.v-menu {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.v-menu .v-list {
+  padding: 8px;
+}
+
+/* Estilos para tabs */
+.v-tabs {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.v-tab {
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 500;
+}
+
+.v-tab--selected {
+  color: var(--primary-color) !important;
+}
+
+/* Estilos para paginación */
+.v-pagination {
+  gap: 8px;
+}
+
+.v-pagination__item {
+  border-radius: 50%;
+}
+
+.v-pagination__item--is-active {
+  background-color: var(--primary-color) !important;
+}
+
+/* Estilos específicos para el Navbar */
+.v-app-bar {
+  background-color: var(--background-color) !important;
+  box-shadow: var(--card-shadow);
+}
+
+.v-app-bar .v-btn {
+  color: var(--primary-color);
+}
+
+.v-app-bar .v-btn:hover {
+  background-color: rgba(74, 202, 168, 0.1);
+}
+
+/* Estilos para imágenes */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Estilos para iconos */
+.v-icon {
+  color: var(--primary-color);
+}
+
+/* Estilos para inputs */
+.v-text-field {
+  border-radius: 8px;
+}
+
+.v-text-field .v-field {
+  border: 1px solid var(--border-color);
+  transition: border-color var(--transition-speed);
+}
+
+.v-text-field .v-field:hover {
+  border-color: var(--primary-color);
+}
+
+/* Estilos para diálogos */
+.v-dialog {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Estilos para tooltips */
+.v-tooltip {
+  background-color: var(--primary-color) !important;
+  border-radius: 4px;
+}
+
+/* Estilos para menús */
+.v-menu {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.v-menu .v-list {
+  padding: 8px;
+}
+
+/* Estilos para tabs */
+.v-tabs {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.v-tab {
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 500;
+}
+
+.v-tab--selected {
+  color: var(--primary-color) !important;
+}
+
+/* Estilos para paginación */
+.v-pagination {
+  gap: 8px;
+}
+
+.v-pagination__item {
+  border-radius: 50%;
+}
+
+.v-pagination__item--is-active {
+  background-color: var(--primary-color) !important;
+} 

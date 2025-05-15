@@ -12,7 +12,6 @@ defineProps({
 <template>
   <section id="sobre-mi" class="py-8">
     <v-container>
-      <h2 class="text-h3 mb-4 text-accent text-center">Sobre Mí</h2>
       <v-row dense align="center" justify="center">
         <v-col cols="12" md="4" class="d-flex justify-center">
           <v-img
@@ -26,14 +25,12 @@ defineProps({
         </v-col>
         <v-col cols="12" md="8" class="d-flex align-center">
           <v-card
-            variant="tonal"
-            color="indigo-darken-3"
             class="mx-auto"
             max-width="800"
             :title="informacionPersonal.nombre + ' ' + informacionPersonal.apellido"
             :subtitle="informacionPersonal.titulo"
           >
-            <v-card-text class="text-accent">
+            <v-card-text class="text-custom">
               {{ informacionPersonal.descripcion }}
             </v-card-text>
           </v-card>
@@ -42,3 +39,13 @@ defineProps({
     </v-container>
   </section>
 </template>
+
+<style scoped>
+.text-custom {
+  color: #04323a;
+}
+
+.v-card {
+  background-color: white !important;
+}
+</style>

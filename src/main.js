@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
+import router from './router'
 
 // Vuetify
 import 'vuetify/styles'
@@ -13,28 +14,20 @@ const vuetify = createVuetify({
   components,
   directives,
   theme: {
-    defaultTheme: 'customTheme',
+    defaultTheme: 'light',
     themes: {
-      customTheme: {
-        dark: false,
+      light: {
         colors: {
-          primary: '#d1dcde',
+          primary: '#1E88E5',
           secondary: '#FFFFFF',
-          accent: '#04323a',
-          background: '#FFFFFF',
-          surface: '#FFFFFF',
-          'surface-variant': '#d1dcde',
-          'on-primary': '#04323a',
-          'on-secondary': '#04323a',
-          'on-accent': '#FFFFFF',
-          'on-background': '#04323a',
-          'on-surface': '#04323a',
+          accent: '#424242'
         }
       }
     }
   }
 })
 
-createApp(App)
-  .use(vuetify)
-  .mount('#app')
+const app = createApp(App)
+app.use(router)
+app.use(vuetify)
+app.mount('#app')
