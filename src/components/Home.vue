@@ -120,14 +120,14 @@ const trabajoBuscado = {
   <div>
     <!-- Sección Inicio -->
     <section id="inicio">
-      <div class="home-container">
-        <div class="overlay"></div>
-        <div class="content">
+  <div class="home-container">
+    <div class="overlay"></div>
+    <div class="content">
           <h2 class="text-h2">{{ informacionPersonal.nombre }}</h2>
           <h2 class="text-h2">{{ informacionPersonal.apellido }}</h2>
           <h5 class="text-h5">{{ informacionPersonal.titulo }}</h5>
         </div>
-      </div>
+    </div>
     </section>
 
     <!-- Sección Sobre Mí -->

@@ -122,10 +122,10 @@ const carrera = {
                   </template>
 
                   <v-hover v-slot="{ isHovering, props }">
-                    <v-card
+          <v-card
                       v-bind="props"
                       :elevation="isHovering ? 4 : 1"
-                      class="mx-auto"
+            class="mx-auto"
                       max-width="100%"
                       :class="{ 'on-hover': isHovering }"
                     >
