@@ -12,7 +12,7 @@ const menuItems = [
   { title: 'Experiencia', path: '/#experiencia' },
   { title: 'Habilidades', path: '/#habilidades' },
   { title: 'Proyectos', path: '/#proyectos' },
-  { title: 'Trabajo', path: '/#trabajo' }
+  { title: 'Objetivos', path: '/#objetivos' }
 ]
 
 const scrollToSection = (sectionId) => {

@@ -8,11 +8,13 @@ defineProps({
 </script>
 
 <template>
-  <section id="trabajo" class="py-16">
+  <section id="objetivos" class="py-16">
     <v-container>
       <v-row>
         <v-col cols="12" class="text-center mb-8">
-          <h2 class="text-h3 mb-2" style="color: #04323a; font-weight: 500; letter-spacing: -0.5px">Trabajo que Busco</h2>
+          <h2 class="text-h3 mb-2" style="color: #04323a; font-weight: 500; letter-spacing: -0.5px">
+            {{ trabajoBuscado.tituloSeccion || 'Objetivos profesionales' }}
+          </h2>
           <div class="title-divider mb-6"></div>
         </v-col>
       </v-row>

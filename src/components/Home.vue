@@ -10,13 +10,19 @@ const informacionPersonal = {
   nombre: "Agripina",
   apellido: "Baldovino",
   titulo: "Analista de Sistemas",
-  descripcion: "¡Hola! Soy Agripina Baldovino, tengo 21 años. Estoy terminando la tesis de la carrera de Analista de Sistemas y me apasiona el desarrollo web. Me destaco especialmente trabajando con Vue y me encanta seguir aprendiendo todo lo que pueda sobre tecnología. Estoy buscando oportunidades para crecer profesionalmente, ya sea en formato remoto o híbrido. Si tenés un proyecto, una idea o simplemente querés conectar, ¡bienvenido/a!",
+  descripcion: "¡Hola! Soy Agripina Baldovino, tengo 22 años. Me recibí como Analista de Sistemas y completé una diplomatura en Testing Manual de la UTN. Actualmente trabajo como QA Manual. Me apasiona el desarrollo web. Me destaco especialmente trabajando con Vue y me encanta seguir aprendiendo todo lo que pueda sobre tecnología. Estoy buscando oportunidades para crecer profesionalmente, ya sea en formato remoto o híbrido. Si tenés un proyecto, una idea o simplemente querés conectar, ¡bienvenido/a!",
   email: "agribaldovino1235@gmail.com",
   linkedin: "linkedin.com/in/agripina-baldovino-606872254",
   ubicacion: "Córdoba, Argentina"
 }
 
 const experiencia = [
+  {
+    titulo: "QA Manual",
+    empresa: "HK IT Experts",
+    periodo: "15 de octubre de 2025 – Actualidad",
+    descripcion: "Creación de planes de prueba, lectura de documentación de análisis, creación de casos de prueba y ejecución en Azure DevOps, gestión de bugs y comunicación constante con analistas de sistemas, desarrolladores, project leader y otro QA del equipo."
+  },
   {
     titulo: "Vendedora",
     empresa: "Bimba (tienda de ropa)",
@@ -63,12 +69,18 @@ const experiencia = [
 
 const habilidades = [
   {
+    categoria: "Testing y QA",
+    items: [
+      "Azure DevOps (ejecución de casos de prueba, gestión de tareas y bugs)"
+    ]
+  },
+  {
     categoria: "Lenguajes y Tecnologías",
     items: [
       "JavaScript (Vue 2, Vue 3)",
       "C# (aplicaciones de escritorio en Visual Studio)",
       "SQL (consultas, diseño de base de datos relacional)",
-      "MongoDB (uso actual en tesis)",
+      "MongoDB (proyectos y desarrollo)",
       "HTML, CSS"
     ]
   },
@@ -94,7 +106,7 @@ const habilidades = [
     categoria: "Metodologías y Organización",
     items: [
       "Scrum (experiencia en trabajo en equipo y manejo de tareas en entorno ágil)",
-      "Uso de herramienta de gestión de tareas (Microsoft Planner o similar)"
+      "Gestión de tareas y seguimiento de trabajo en Azure DevOps"
     ]
   },
   {
@@ -103,16 +115,20 @@ const habilidades = [
       "Paquete Microsoft Office (Word, Excel, PowerPoint)",
       "Conocimientos básicos de Linux",
       "Experiencia en redes sociales y gestión de contenido digital",
-      "Inglés: Nivel intermedio en lectura y comprensión (2014-2019)"
+      "Inglés: nivel intermedio en lectura y comprensión"
     ]
   }
 ]
 
 const trabajoBuscado = {
-  titulo: "Analista de Sistemas",
-  descripcion: "Estoy en búsqueda de una oportunidad laboral en tecnología que me permita seguir aprendiendo, crecer profesionalmente y aportar mis conocimientos. Estoy abierta a diferentes roles como desarrollo frontend, backend, análisis funcional o trabajos relacionados con bases de datos y SQL.",
-  ubicacion: "Busco un entorno con buena comunicación y acompañamiento, especialmente en esta etapa inicial de mi camino laboral. Estoy disponible para trabajar de forma remota, híbrida o presencial en Córdoba Capital. Actualmente vivo en el barrio Nueva Córdoba.",
-  motivacion: "Mi mayor motivación es seguir aprendiendo, adaptarme a nuevos desafíos y ser parte de un equipo donde pueda desarrollarme y aportar valor. También estoy abierta a participar en proyectos freelance o colaborativos mientras finalizo mi tesis."
+  tituloSeccion: "Objetivos profesionales",
+  titulo: "Abierta a nuevas oportunidades",
+  descripcion:
+    "Actualmente trabajo como QA Manual y me entusiasma seguir creciendo en tecnología. Estoy abierta a propuestas que me permitan desarrollarme en testing, análisis funcional o desarrollo frontend, donde pueda aportar mi formación, mi experiencia con Vue y bases de datos, y lo aprendido en equipos ágiles.",
+  ubicacion:
+    "Valoro los entornos con buena comunicación y trabajo en equipo. Estoy disponible para modalidad remota, híbrida o presencial en Córdoba Capital (Nueva Córdoba).",
+  motivacion:
+    "Mi motivación es seguir aprendiendo, enfrentar nuevos desafíos y aportar valor. También me interesan proyectos freelance o colaboraciones puntuales."
 }
 </script>
 
@@ -143,7 +159,7 @@ const trabajoBuscado = {
     <SkillsVue :habilidades="habilidades" />
 
     <!-- Sección Proyectos -->
-    <Projects :proyectos="proyectos" />
+    <Projects />
 
     <!-- Sección Trabajo -->
     <JobSearch :trabajoBuscado="trabajoBuscado" />

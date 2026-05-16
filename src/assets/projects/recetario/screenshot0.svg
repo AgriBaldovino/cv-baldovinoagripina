@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Buscador y categorías">
+  <rect width="800" height="800" fill="#F8F7F2"/>
+  <text x="400" y="130" text-anchor="middle" fill="#243B55" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="46">BUSCADOR Y CATEGORÍAS</text>
+  <g transform="translate(400 470)">
+    <circle cx="0" cy="0" r="95" fill="#FFFFFF" stroke="#243B55" stroke-width="6"/>
+    <circle cx="55" cy="55" r="38" fill="none" stroke="#243B55" stroke-width="10"/>
+    <rect x="-170" y="120" width="110" height="42" rx="20" fill="#E8A0BF" stroke="#243B55" stroke-width="4"/>
+    <text x="-115" y="150" text-anchor="middle" fill="#243B55" font-size="18" font-weight="700">CUPCAKES</text>
+    <rect x="60" y="120" width="110" height="42" rx="20" fill="#F4C430" stroke="#243B55" stroke-width="4"/>
+    <text x="115" y="150" text-anchor="middle" fill="#243B55" font-size="18" font-weight="700">BUDINES</text>
+  </g>
+</svg>

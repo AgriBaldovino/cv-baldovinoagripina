@@ -1,29 +1,44 @@
 <script setup>
-import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import imgPortada from '../assets/projects/serotonine/imgPortada.png'
+import imgSerotonine from '../assets/projects/serotonine/imgPortada.png'
+import imgRecetario from '../assets/projects/recetario/imgPortada.svg'
+import imgUnas from '../assets/projects/unas/imgPortada.svg'
 
 const router = useRouter()
 
 const proyectos = [
   {
     id: 1,
-    titulo: "Sistema de Control de Stock - Serotonine",
-    descripcion: "Desarrollo de un sistema integral para la gestión de inventario y control de stock para la marca Serotonine.",
-    imagen: imgPortada,
-    tecnologias: ["Vue.js", "Vuetify", "MongoDB", "Express"],
-    caracteristicas: [
-      "Control de inventario en tiempo real",
-      "Gestión de pedidos y envíos",
-      "Dashboard con métricas clave",
-      "Integración con sistemas de envío"
-    ]
+    titulo: 'Control de Stock - Serotonine',
+    descripcion:
+      'Gestión de inventario y stock en tiempo real para la marca Serotonine.',
+    imagen: imgSerotonine,
+    tecnologias: ['Vue 3', 'Vuetify', 'MongoDB', 'Express'],
+    ruta: '/proyecto/serotonine'
+  },
+  {
+    id: 2,
+    titulo: 'Recetario - Baking In Bliss',
+    descripcion:
+      'Recetario privado para el emprendimiento de budines y cupcakes: login, buscador, filtros por categoría y gestión completa de recetas.',
+    imagen: imgRecetario,
+    tecnologias: ['Vue 3', 'Vuetify', 'MongoDB', 'Express'],
+    ruta: '/proyecto/baking-in-bliss'
+  },
+  {
+    id: 3,
+    titulo: 'Agrib Nails',
+    descripcion:
+      'Turnos, reservas, historial por clienta y descuentos automáticos según servicio. Panel admin y acceso para clientas.',
+    imagen: imgUnas,
+    tecnologias: ['Vue 3', 'TypeScript', 'Vuetify'],
+    ruta: '/proyecto/agrib-nails'
   }
 ]
 
 const verProyecto = (proyecto) => {
-  if (proyecto.id === 1) {
-    router.push('/proyecto/serotonine')
+  if (proyecto.ruta) {
+    router.push(proyecto.ruta)
   }
 }
 </script>
@@ -37,28 +52,22 @@ const verProyecto = (proyecto) => {
           <div class="title-divider mb-6"></div>
         </v-col>
       </v-row>
-      
-      <!-- Grid de Proyectos -->
+
       <v-row justify="center">
-        <v-col 
-          v-for="proyecto in proyectos" 
-          :key="proyecto.id" 
-          cols="12" 
-          :md="proyectos.length === 1 ? 6 : 6" 
-          :lg="proyectos.length === 1 ? 4 : 4"
+        <v-col
+          v-for="proyecto in proyectos"
+          :key="proyecto.id"
+          cols="12"
+          sm="6"
+          lg="4"
           class="d-flex justify-center"
         >
           <v-card
-            class="project-card"
+            class="project-card project-card--clickable"
+            style="width: 100%; max-width: 400px"
             @click="verProyecto(proyecto)"
-            style="cursor: pointer; width: 100%; max-width: 400px"
           >
-            <v-img
-              :src="proyecto.imagen"
-              height="250"
-              contain
-              class="project-image"
-            >
+            <v-img :src="proyecto.imagen" height="250" contain class="project-image">
               <template v-slot:placeholder>
                 <v-row class="fill-height ma-0" align="center" justify="center">
                   <v-progress-circular indeterminate color="grey-lighten-4"></v-progress-circular>
@@ -66,13 +75,13 @@ const verProyecto = (proyecto) => {
               </template>
             </v-img>
 
-            <v-card-title class="text-h5">
+            <v-card-title class="text-h6">
               {{ proyecto.titulo }}
             </v-card-title>
 
             <v-card-text>
-              <p class="text-body-1">{{ proyecto.descripcion }}</p>
-              <v-chip-group class="mt-2 d-flex justify-center">
+              <p class="text-body-2">{{ proyecto.descripcion }}</p>
+              <v-chip-group class="mt-2 d-flex flex-wrap justify-center">
                 <v-chip
                   v-for="tecnologia in proyecto.tecnologias"
                   :key="tecnologia"
@@ -83,6 +92,9 @@ const verProyecto = (proyecto) => {
                   {{ tecnologia }}
                 </v-chip>
               </v-chip-group>
+              <p class="text-caption text-center mt-3 mb-0" style="color: #666">
+                Clic para ver más detalles
+              </p>
             </v-card-text>
           </v-card>
         </v-col>
@@ -95,6 +107,7 @@ const verProyecto = (proyecto) => {
 .project-card {
   transition: transform 0.2s;
   border: 1px solid #e0e0e0;
+  cursor: pointer;
 }
 
 .project-card:hover {
@@ -105,7 +118,7 @@ const verProyecto = (proyecto) => {
 .project-image {
   border-radius: 8px 8px 0 0;
   overflow: hidden;
-  background-color: #f5f5f5;
+  background-color: #f8f7f2;
 }
 
 .v-card-title {
@@ -118,7 +131,7 @@ const verProyecto = (proyecto) => {
   padding: 8px 16px 16px;
 }
 
-.text-body-1 {
+.text-body-2 {
   color: #333;
   line-height: 1.6;
   margin-bottom: 12px;
@@ -135,4 +148,4 @@ const verProyecto = (proyecto) => {
   background-color: #04323a;
   margin: 0 auto;
 }
-</style> 
+</style>
